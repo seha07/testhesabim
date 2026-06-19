@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Evcil hayvanlarınız için hazırladığımız video oynatma listelerini keşfedin.">
+    <title>Videolar | Canlı Destek</title>
+
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* ── Header ── */
+        header {
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 4px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #444;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: background .2s, color .2s;
+        }
+
+        nav a:hover,
+        nav a[aria-current="page"] {
+            background: #eef5ff;
+            color: #2563eb;
+        }
+
+        /* ── Hero ── */
+        .hero {
+            padding: 70px 20px 40px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 5vw, 44px);
+            color: #2563eb;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            color: #666;
+            max-width: 620px;
+            margin: auto;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* ── Buton Izgarası ── */
+        .playlist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin: 40px auto 60px;
+        }
+
+        /* ── Playlist Butonu ── */
+        .playlist-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            background: #ffffff;
+            border: 2px solid transparent;
+            border-radius: 16px;
+            padding: 36px 20px;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, .08);
+            transition: transform .2s, box-shadow .2s, border-color .2s;
+            cursor: pointer;
+        }
+
+        .playlist-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 28px rgba(37, 99, 235, .15);
+            border-color: #2563eb;
+        }
+
+        .playlist-btn .icon {
+            font-size: 56px;
+            line-height: 1;
+        }
+
+        .playlist-btn .label {
+            font-size: 17px;
+            font-weight: 700;
+            color: #2563eb;
+            text-align: center;
+        }
+
+        .playlist-btn .sub {
+            font-size: 13px;
+            color: #888;
+            text-align: center;
+        }
+
+        .playlist-btn .yt-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #ff0000;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-top: 4px;
+        }
+
+        .playlist-btn .yt-badge svg {
+            width: 14px;
+            height: 14px;
+            fill: #fff;
+        }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            background: #fff;
+            margin-top: 10px;
+            border-top: 1px solid #e5e7eb;
+            font-size: 14px;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            .playlist-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            .playlist-btn {
+                padding: 28px 14px;
+            }
+
+            .playlist-btn .icon {
+                font-size: 44px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .playlist-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container navbar">
+        <a href="index.html" class="logo">Canlı Destek</a>
+
+        <nav aria-label="Ana menü">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="videolar.html" aria-current="page">Videolar</a>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="iletisim.html">İletişim</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero" aria-labelledby="page-title">
+        <div class="container">
+            <h1 id="page-title">Videolar</h1>
+            <p>
+                Evcil dostlarınız için hazırladığımız YouTube oynatma listelerini
+                keşfedin. Kategorinizi seçin ve izlemeye başlayın!
+            </p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="playlist-grid" role="list" aria-label="YouTube oynatma listeleri">
+
+            <!-- ── KEDİ ── -->
+            <a
+                href=https://www.youtube.com/watch?v=GwUwJnm_ZqA&list=PLx7Zva13ePhvNYyWSakiBCP1BWTh00cJN&pp=sAgC
+                class="playlist-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                role="listitem"
+                aria-label="Kedi videoları oynatma listesini aç"
+            >
+                <span class="icon">🐱</span>
+                <span class="label">Kedi Videoları</span>
+                <span class="sub">Kediler için içerikler</span>
+                <span class="yt-badge">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/>
+                    </svg>
+                    YouTube'da İzle
+                </span>
+            </a>
+
+            <!-- ── KÖPEK ── -->
+            <a
+                href=https://www.youtube.com/watch?v=RLMMBGwLED8&list=PLx7Zva13ePhvPnwfOGpXjM-kBZQ4jowQA&pp=sAgC
+                class="playlist-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                role="listitem"
+                aria-label="Köpek videoları oynatma listesini aç"
+            >
+                <span class="icon">🐶</span>
+                <span class="label">Köpek Videoları</span>
+                <span class="sub">Köpekler için içerikler</span>
+                <span class="yt-badge">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/>
+                    </svg>
+                    YouTube'da İzle
+                </span>
+            </a>
+
+            <!-- ── YAVRU KEDİ ── -->
+            <a
+                href=https://www.youtube.com/watch?v=oBrdQeurFcQ&list=PLx7Zva13ePhsfER0OpBCIwKUyTPMPdLoi&pp=sAgC
+                class="playlist-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                role="listitem"
+                aria-label="Yavru kedi videoları oynatma listesini aç"
+            >
+                <span class="icon">🐈</span>
+                <span class="label">Yavru Kedi Videoları</span>
+                <span class="sub">Minikler için içerikler</span>
+                <span class="yt-badge">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/>
+                    </svg>
+                    YouTube'da İzle
+                </span>
+            </a>
+
+            <!-- ── YAVRU KÖPEK ── -->
+            <a
+                href=https://www.youtube.com/watch?v=xZ_6pWZ7ePY&list=PLx7Zva13ePhtl0rnAd8-fxHXs728vCkfe&pp=0gcJCeECOCosWNinsAgC
+                class="playlist-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                role="listitem"
+                aria-label="Yavru köpek videoları oynatma listesini aç"
+            >
+                <span class="icon">🐕</span>
+                <span class="label">Yavru Köpek Videoları</span>
+                <span class="sub">Minikler için içerikler</span>
+                <span class="yt-badge">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/>
+                    </svg>
+                    YouTube'da İzle
+                </span>
+            </a>
+
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>© 2026 Canlı Destek Merkezi. Tüm hakları saklıdır.</p>
+</footer>
+
+</body>
+</html>
